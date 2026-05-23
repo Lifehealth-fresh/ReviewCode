@@ -1,0 +1,14 @@
+﻿@model dynamic
+@if (Model != null && Model.TotalPages > 1)
+{
+    <nav>
+        <ul class="pagination">
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                    <a class="page-link" href="?page=@i&tuNgay=@ViewBag.TuNgay&denNgay=@ViewBag.DenNgay">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}
